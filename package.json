@@ -1,9 +1,12 @@
 {
-  "name": "my-esm-package",
+  "name": "@pixmi-game/cocos-toolbox",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -11,12 +14,20 @@
     }
   },
   "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "yalc:publish": "yalc publish --no-scripts",
+    "yalc:push": "yalc push --no-scripts",
+    "npm:setdefault": "npm config set registry https://registry.npmjs.org/",
+    "npm:setmirror": "npm config set registry https://registry.npmmirror.com",
+    "publish": "npm publish"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
     "typescript": "^5.0.0",
-    "vite-plugin-dts": "^3.0.0"
+    "yalc": "1.0.0-pre.53"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
