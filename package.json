@@ -2,20 +2,24 @@
   "name": "@pixmi-game/cocos-toolbox",
   "version": "1.0.3",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "files": [
-    "dist/**/*"
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "yalc:publish": "yalc publish --no-scripts",
     "yalc:push": "yalc push --no-scripts",
     "npm:setdefault": "npm config set registry https://registry.npmjs.org/",
@@ -23,7 +27,11 @@
     "publish": "npm publish"
   },
   "devDependencies": {
+    "camelcase": "^8.0.0",
     "typescript": "^5.0.0",
+    "vite": "^7.0.2",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4",
     "yalc": "1.0.0-pre.53"
   },
   "publishConfig": {
