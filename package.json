@@ -1,11 +1,11 @@
 {
   "name": "@pixmi-game/cocos-toolbox",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "exports": {
     ".": {
@@ -29,5 +29,21 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "cocos",
+    "cocos-creator",
+    "game",
+    "toolkit",
+    "utils"
+  ],
+  "homepage": "https://github.com/pixmi-game/cocos-toolbox#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixmi-game/cocos-toolbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pixmi-game/cocos-toolbox/issues"
   }
 }
